@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newer.data.dao.FileDAO">
+  <resultMap id="BaseResultMap" type="com.newer.data.entity.File">
+    <!--@mbg.generated-->
+    <!--@Table D_FILE-->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="PRODUCT_ID" jdbcType="VARCHAR" property="productId" />
+    <result column="PRODUCT_NAME" jdbcType="VARCHAR" property="productName" />
+    <result column="FACTORY_NAME" jdbcType="VARCHAR" property="factoryName" />
+    <result column="FIRST_KIND_ID" jdbcType="VARCHAR" property="firstKindId" />
+    <result column="FIRST_KIND_NAME" jdbcType="VARCHAR" property="firstKindName" />
+    <result column="SECOND_KIND_ID" jdbcType="VARCHAR" property="secondKindId" />
+    <result column="SECOND_KIND_NAME" jdbcType="VARCHAR" property="secondKindName" />
+    <result column="THIRD_KIND_ID" jdbcType="VARCHAR" property="thirdKindId" />
+    <result column="THIRD_KIND_NAME" jdbcType="VARCHAR" property="thirdKindName" />
+    <result column="PRODUCT_NICK" jdbcType="VARCHAR" property="productNick" />
+    <result column="TYPE" jdbcType="VARCHAR" property="type" />
+    <result column="PRODUCT_CLASS" jdbcType="VARCHAR" property="productClass" />
+    <result column="PERSONAL_UNIT" jdbcType="VARCHAR" property="personalUnit" />
+    <result column="PERSONAL_VALUE" jdbcType="VARCHAR" property="personalValue" />
+    <result column="PROVIDER_GROUP" jdbcType="VARCHAR" property="providerGroup" />
+    <result column="WARRANTY" jdbcType="VARCHAR" property="warranty" />
+    <result column="TWIN_NAME" jdbcType="VARCHAR" property="twinName" />
+    <result column="TWIN_ID" jdbcType="VARCHAR" property="twinId" />
+    <result column="LIFECYCLE" jdbcType="VARCHAR" property="lifecycle" />
+    <result column="LIST_PRICE" jdbcType="DECIMAL" property="listPrice" />
+    <result column="COST_PRICE" jdbcType="DECIMAL" property="costPrice" />
+    <result column="REAL_COST_PRICE" jdbcType="DECIMAL" property="realCostPrice" />
+    <result column="AMOUNT_UNIT" jdbcType="VARCHAR" property="amountUnit" />
+    <result column="PRODUCT_DESCRIBE" jdbcType="VARCHAR" property="productDescribe" />
+    <result column="RESPONSIBLE_PERSON" jdbcType="VARCHAR" property="responsiblePerson" />
+    <result column="REGISTER" jdbcType="VARCHAR" property="register" />
+    <result column="REGISTER_TIME" jdbcType="TIMESTAMP" property="registerTime" />
+    <result column="CHECKER" jdbcType="VARCHAR" property="checker" />
+    <result column="CHECK_TIME" jdbcType="TIMESTAMP" property="checkTime" />
+    <result column="CHECK_TAG" jdbcType="VARCHAR" property="checkTag" />
+    <result column="CHANGER" jdbcType="VARCHAR" property="changer" />
+    <result column="CHANGE_TIME" jdbcType="TIMESTAMP" property="changeTime" />
+    <result column="CHANGE_TAG" jdbcType="VARCHAR" property="changeTag" />
+    <result column="PRICE_CHANGE_TAG" jdbcType="VARCHAR" property="priceChangeTag" />
+    <result column="FILE_CHANGE_AMOUNT" jdbcType="DECIMAL" property="fileChangeAmount" />
+    <result column="DELETE_TAG" jdbcType="VARCHAR" property="deleteTag" />
+    <result column="DESIGN_MODULE_TAG" jdbcType="VARCHAR" property="designModuleTag" />
+    <result column="DESIGN_PROCEDURE_TAG" jdbcType="VARCHAR" property="designProcedureTag" />
+    <result column="DESIGN_CELL_TAG" jdbcType="VARCHAR" property="designCellTag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, PRODUCT_ID, PRODUCT_NAME, FACTORY_NAME, FIRST_KIND_ID, FIRST_KIND_NAME, SECOND_KIND_ID, 
+    SECOND_KIND_NAME, THIRD_KIND_ID, THIRD_KIND_NAME, PRODUCT_NICK, "TYPE", PRODUCT_CLASS, 
+    PERSONAL_UNIT, PERSONAL_VALUE, PROVIDER_GROUP, WARRANTY, TWIN_NAME, TWIN_ID, LIFECYCLE, 
+    LIST_PRICE, COST_PRICE, REAL_COST_PRICE, AMOUNT_UNIT, PRODUCT_DESCRIBE, RESPONSIBLE_PERSON, 
+    REGISTER, REGISTER_TIME, CHECKER, CHECK_TIME, CHECK_TAG, CHANGER, CHANGE_TIME, CHANGE_TAG, 
+    PRICE_CHANGE_TAG, FILE_CHANGE_AMOUNT, DELETE_TAG, DESIGN_MODULE_TAG, DESIGN_PROCEDURE_TAG, 
+    DESIGN_CELL_TAG
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from D_FILE
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from D_FILE
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insertSelective" parameterType="com.newer.data.entity.File">
+    <!--@mbg.generated-->
+    insert into D_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="productId != null">
+        PRODUCT_ID,
+      </if>
+      <if test="productName != null">
+        PRODUCT_NAME,
+      </if>
+      <if test="factoryName != null">
+        FACTORY_NAME,
+      </if>
+      <if test="firstKindId != null">
+        FIRST_KIND_ID,
+      </if>
+      <if test="firstKindName != null">
+        FIRST_KIND_NAME,
+      </if>
+      <if test="secondKindId != null">
+        SECOND_KIND_ID,
+      </if>
+      <if test="secondKindName != null">
+        SECOND_KIND_NAME,
+      </if>
+      <if test="thirdKindId != null">
+        THIRD_KIND_ID,
+      </if>
+      <if test="thirdKindName != null">
+        THIRD_KIND_NAME,
+      </if>
+      <if test="productNick != null">
+        PRODUCT_NICK,
+      </if>
+      <if test="type != null">
+        "TYPE",
+      </if>
+      <if test="productClass != null">
+        PRODUCT_CLASS,
+      </if>
+      <if test="personalUnit != null">
+        PERSONAL_UNIT,
+      </if>
+      <if test="personalValue != null">
+        PERSONAL_VALUE,
+      </if>
+      <if test="providerGroup != null">
+        PROVIDER_GROUP,
+      </if>
+      <if test="warranty != null">
+        WARRANTY,
+      </if>
+      <if test="twinName != null">
+        TWIN_NAME,
+      </if>
+      <if test="twinId != null">
+        TWIN_ID,
+      </if>
+      <if test="lifecycle != null">
+        LIFECYCLE,
+      </if>
+      <if test="listPrice != null">
+        LIST_PRICE,
+      </if>
+      <if test="costPrice != null">
+        COST_PRICE,
+      </if>
+      <if test="realCostPrice != null">
+        REAL_COST_PRICE,
+      </if>
+      <if test="amountUnit != null">
+        AMOUNT_UNIT,
+      </if>
+      <if test="productDescribe != null">
+        PRODUCT_DESCRIBE,
+      </if>
+      <if test="responsiblePerson != null">
+        RESPONSIBLE_PERSON,
+      </if>
+      <if test="register != null">
+        REGISTER,
+      </if>
+      <if test="registerTime != null">
+        REGISTER_TIME,
+      </if>
+      <if test="checker != null">
+        CHECKER,
+      </if>
+      <if test="checkTime != null">
+        CHECK_TIME,
+      </if>
+      <if test="checkTag != null">
+        CHECK_TAG,
+      </if>
+      <if test="changer != null">
+        CHANGER,
+      </if>
+      <if test="changeTime != null">
+        CHANGE_TIME,
+      </if>
+      <if test="changeTag != null">
+        CHANGE_TAG,
+      </if>
+      <if test="priceChangeTag != null">
+        PRICE_CHANGE_TAG,
+      </if>
+      <if test="fileChangeAmount != null">
+        FILE_CHANGE_AMOUNT,
+      </if>
+      <if test="deleteTag != null">
+        DELETE_TAG,
+      </if>
+      <if test="designModuleTag != null">
+        DESIGN_MODULE_TAG,
+      </if>
+      <if test="designProcedureTag != null">
+        DESIGN_PROCEDURE_TAG,
+      </if>
+      <if test="designCellTag != null">
+        DESIGN_CELL_TAG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="productId != null">
+        #{productId,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="factoryName != null">
+        #{factoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="firstKindId != null">
+        #{firstKindId,jdbcType=VARCHAR},
+      </if>
+      <if test="firstKindName != null">
+        #{firstKindName,jdbcType=VARCHAR},
+      </if>
+      <if test="secondKindId != null">
+        #{secondKindId,jdbcType=VARCHAR},
+      </if>
+      <if test="secondKindName != null">
+        #{secondKindName,jdbcType=VARCHAR},
+      </if>
+      <if test="thirdKindId != null">
+        #{thirdKindId,jdbcType=VARCHAR},
+      </if>
+      <if test="thirdKindName != null">
+        #{thirdKindName,jdbcType=VARCHAR},
+      </if>
+      <if test="productNick != null">
+        #{productNick,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="productClass != null">
+        #{productClass,jdbcType=VARCHAR},
+      </if>
+      <if test="personalUnit != null">
+        #{personalUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="personalValue != null">
+        #{personalValue,jdbcType=VARCHAR},
+      </if>
+      <if test="providerGroup != null">
+        #{providerGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="warranty != null">
+        #{warranty,jdbcType=VARCHAR},
+      </if>
+      <if test="twinName != null">
+        #{twinName,jdbcType=VARCHAR},
+      </if>
+      <if test="twinId != null">
+        #{twinId,jdbcType=VARCHAR},
+      </if>
+      <if test="lifecycle != null">
+        #{lifecycle,jdbcType=VARCHAR},
+      </if>
+      <if test="listPrice != null">
+        #{listPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="costPrice != null">
+        #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="realCostPrice != null">
+        #{realCostPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="amountUnit != null">
+        #{amountUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="productDescribe != null">
+        #{productDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="responsiblePerson != null">
+        #{responsiblePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="register != null">
+        #{register,jdbcType=VARCHAR},
+      </if>
+      <if test="registerTime != null">
+        #{registerTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checker != null">
+        #{checker,jdbcType=VARCHAR},
+      </if>
+      <if test="checkTime != null">
+        #{checkTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkTag != null">
+        #{checkTag,jdbcType=VARCHAR},
+      </if>
+      <if test="changer != null">
+        #{changer,jdbcType=VARCHAR},
+      </if>
+      <if test="changeTime != null">
+        #{changeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="changeTag != null">
+        #{changeTag,jdbcType=VARCHAR},
+      </if>
+      <if test="priceChangeTag != null">
+        #{priceChangeTag,jdbcType=VARCHAR},
+      </if>
+      <if test="fileChangeAmount != null">
+        #{fileChangeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="deleteTag != null">
+        #{deleteTag,jdbcType=VARCHAR},
+      </if>
+      <if test="designModuleTag != null">
+        #{designModuleTag,jdbcType=VARCHAR},
+      </if>
+      <if test="designProcedureTag != null">
+        #{designProcedureTag,jdbcType=VARCHAR},
+      </if>
+      <if test="designCellTag != null">
+        #{designCellTag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.newer.data.entity.File">
+    <!--@mbg.generated-->
+    update D_FILE
+    <set>
+      <if test="productId != null">
+        PRODUCT_ID = #{productId,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        PRODUCT_NAME = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="factoryName != null">
+        FACTORY_NAME = #{factoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="firstKindId != null">
+        FIRST_KIND_ID = #{firstKindId,jdbcType=VARCHAR},
+      </if>
+      <if test="firstKindName != null">
+        FIRST_KIND_NAME = #{firstKindName,jdbcType=VARCHAR},
+      </if>
+      <if test="secondKindId != null">
+        SECOND_KIND_ID = #{secondKindId,jdbcType=VARCHAR},
+      </if>
+      <if test="secondKindName != null">
+        SECOND_KIND_NAME = #{secondKindName,jdbcType=VARCHAR},
+      </if>
+      <if test="thirdKindId != null">
+        THIRD_KIND_ID = #{thirdKindId,jdbcType=VARCHAR},
+      </if>
+      <if test="thirdKindName != null">
+        THIRD_KIND_NAME = #{thirdKindName,jdbcType=VARCHAR},
+      </if>
+      <if test="productNick != null">
+        PRODUCT_NICK = #{productNick,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        "TYPE" = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="productClass != null">
+        PRODUCT_CLASS = #{productClass,jdbcType=VARCHAR},
+      </if>
+      <if test="personalUnit != null">
+        PERSONAL_UNIT = #{personalUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="personalValue != null">
+        PERSONAL_VALUE = #{personalValue,jdbcType=VARCHAR},
+      </if>
+      <if test="providerGroup != null">
+        PROVIDER_GROUP = #{providerGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="warranty != null">
+        WARRANTY = #{warranty,jdbcType=VARCHAR},
+      </if>
+      <if test="twinName != null">
+        TWIN_NAME = #{twinName,jdbcType=VARCHAR},
+      </if>
+      <if test="twinId != null">
+        TWIN_ID = #{twinId,jdbcType=VARCHAR},
+      </if>
+      <if test="lifecycle != null">
+        LIFECYCLE = #{lifecycle,jdbcType=VARCHAR},
+      </if>
+      <if test="listPrice != null">
+        LIST_PRICE = #{listPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="costPrice != null">
+        COST_PRICE = #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="realCostPrice != null">
+        REAL_COST_PRICE = #{realCostPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="amountUnit != null">
+        AMOUNT_UNIT = #{amountUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="productDescribe != null">
+        PRODUCT_DESCRIBE = #{productDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="responsiblePerson != null">
+        RESPONSIBLE_PERSON = #{responsiblePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="register != null">
+        REGISTER = #{register,jdbcType=VARCHAR},
+      </if>
+      <if test="registerTime != null">
+        REGISTER_TIME = #{registerTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checker != null">
+        CHECKER = #{checker,jdbcType=VARCHAR},
+      </if>
+      <if test="checkTime != null">
+        CHECK_TIME = #{checkTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkTag != null">
+        CHECK_TAG = #{checkTag,jdbcType=VARCHAR},
+      </if>
+      <if test="changer != null">
+        CHANGER = #{changer,jdbcType=VARCHAR},
+      </if>
+      <if test="changeTime != null">
+        CHANGE_TIME = #{changeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="changeTag != null">
+        CHANGE_TAG = #{changeTag,jdbcType=VARCHAR},
+      </if>
+      <if test="priceChangeTag != null">
+        PRICE_CHANGE_TAG = #{priceChangeTag,jdbcType=VARCHAR},
+      </if>
+      <if test="fileChangeAmount != null">
+        FILE_CHANGE_AMOUNT = #{fileChangeAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="deleteTag != null">
+        DELETE_TAG = #{deleteTag,jdbcType=VARCHAR},
+      </if>
+      <if test="designModuleTag != null">
+        DESIGN_MODULE_TAG = #{designModuleTag,jdbcType=VARCHAR},
+      </if>
+      <if test="designProcedureTag != null">
+        DESIGN_PROCEDURE_TAG = #{designProcedureTag,jdbcType=VARCHAR},
+      </if>
+      <if test="designCellTag != null">
+        DESIGN_CELL_TAG = #{designCellTag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.newer.data.entity.File">
+    <!--@mbg.generated-->
+    update D_FILE
+    set PRODUCT_ID = #{productId,jdbcType=VARCHAR},
+      PRODUCT_NAME = #{productName,jdbcType=VARCHAR},
+      FACTORY_NAME = #{factoryName,jdbcType=VARCHAR},
+      FIRST_KIND_ID = #{firstKindId,jdbcType=VARCHAR},
+      FIRST_KIND_NAME = #{firstKindName,jdbcType=VARCHAR},
+      SECOND_KIND_ID = #{secondKindId,jdbcType=VARCHAR},
+      SECOND_KIND_NAME = #{secondKindName,jdbcType=VARCHAR},
+      THIRD_KIND_ID = #{thirdKindId,jdbcType=VARCHAR},
+      THIRD_KIND_NAME = #{thirdKindName,jdbcType=VARCHAR},
+      PRODUCT_NICK = #{productNick,jdbcType=VARCHAR},
+      "TYPE" = #{type,jdbcType=VARCHAR},
+      PRODUCT_CLASS = #{productClass,jdbcType=VARCHAR},
+      PERSONAL_UNIT = #{personalUnit,jdbcType=VARCHAR},
+      PERSONAL_VALUE = #{personalValue,jdbcType=VARCHAR},
+      PROVIDER_GROUP = #{providerGroup,jdbcType=VARCHAR},
+      WARRANTY = #{warranty,jdbcType=VARCHAR},
+      TWIN_NAME = #{twinName,jdbcType=VARCHAR},
+      TWIN_ID = #{twinId,jdbcType=VARCHAR},
+      LIFECYCLE = #{lifecycle,jdbcType=VARCHAR},
+      LIST_PRICE = #{listPrice,jdbcType=DECIMAL},
+      COST_PRICE = #{costPrice,jdbcType=DECIMAL},
+      REAL_COST_PRICE = #{realCostPrice,jdbcType=DECIMAL},
+      AMOUNT_UNIT = #{amountUnit,jdbcType=VARCHAR},
+      PRODUCT_DESCRIBE = #{productDescribe,jdbcType=VARCHAR},
+      RESPONSIBLE_PERSON = #{responsiblePerson,jdbcType=VARCHAR},
+      REGISTER = #{register,jdbcType=VARCHAR},
+      REGISTER_TIME = #{registerTime,jdbcType=TIMESTAMP},
+      CHECKER = #{checker,jdbcType=VARCHAR},
+      CHECK_TIME = #{checkTime,jdbcType=TIMESTAMP},
+      CHECK_TAG = #{checkTag,jdbcType=VARCHAR},
+      CHANGER = #{changer,jdbcType=VARCHAR},
+      CHANGE_TIME = #{changeTime,jdbcType=TIMESTAMP},
+      CHANGE_TAG = #{changeTag,jdbcType=VARCHAR},
+      PRICE_CHANGE_TAG = #{priceChangeTag,jdbcType=VARCHAR},
+      FILE_CHANGE_AMOUNT = #{fileChangeAmount,jdbcType=DECIMAL},
+      DELETE_TAG = #{deleteTag,jdbcType=VARCHAR},
+      DESIGN_MODULE_TAG = #{designModuleTag,jdbcType=VARCHAR},
+      DESIGN_PROCEDURE_TAG = #{designProcedureTag,jdbcType=VARCHAR},
+      DESIGN_CELL_TAG = #{designCellTag,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>
